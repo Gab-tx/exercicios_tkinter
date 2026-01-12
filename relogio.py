@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import ttk
 from datetime import datetime as dt
 
 def atualizar_relogio():
@@ -8,12 +9,13 @@ def atualizar_relogio():
     root.after(1000, atualizar_relogio)
 
 root = tk.Tk()
-root.geometry("900x500")
+root.configure(bg="#333333")
+root.geometry("200x80")
 root.resizable(False,False)
-root.option_add("*Font","Roboto 28")
+root.option_add("*Font","DS-DIGITAL 36 bold")
 
 label_relogio = tk.StringVar()
-label = tk.Label(root, textvariable=label_relogio)
+label = ttk.Label(root, textvariable=label_relogio,background="#333333",foreground="#00ff00")
 label.pack(pady=10)
 
 atualizar_relogio()
